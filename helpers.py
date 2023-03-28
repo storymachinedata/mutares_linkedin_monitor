@@ -22,8 +22,8 @@ filters = { 'Total Interaction: High to Low' : ['Total Interactions', False],
 
 
 mapper = { 'https://www.linkedin.com/company/amaneos/posts/?feedView=all' : 'Amaneos' ,
-            'https://www.linkedin.com/company/asteriio/posts/?feedView=all': 'Asteri'  ,
-         'https://www.linkedin.com/company/balcke-duerr/posts/?feedView=all': 'Balcke-Dürr Group',
+            'https://www.linkedin.com/company/asteri-ab/posts/?feedView=all': 'Asteri'  ,
+            'https://www.linkedin.com/company/balcke-duerr/posts/?feedView=all': 'Balcke-Dürr Group',
         	'https://www.linkedin.com/company/cimos/posts/?feedView=all':'Cimos',
         	'https://www.linkedin.com/company/clecim/posts/?feedView=all':'Clecim',
         	'https://www.linkedin.com/company/donges-group/posts/?feedView=all':'Donges Group',
@@ -44,7 +44,32 @@ mapper = { 'https://www.linkedin.com/company/amaneos/posts/?feedView=all' : 'Ama
         	'https://www.linkedin.com/company/sabo-maschinenfabrik-gmbh/posts/?feedView=all':'SABO',
         	'https://www.linkedin.com/company/special-melted-products-ltd/posts/?feedView=all':'Special Melted Products',
         	'https://www.linkedin.com/company/valtitubes/posts/?feedView=all':'VALTI',
-            'https://www.linkedin.com/company/mutares/posts/?feedView=all': 'Mutares SE & CO.KGaA'}
+            'https://www.linkedin.com/company/mutares/posts/?feedView=all': 'Mutares SE & CO.KGaA',
+            'https://www.linkedin.com/company/asteriio/posts/?feedView=all': 'Asteri XX',
+            "https://www.linkedin.com/company/better-orange-ir-&-hv-ag/posts/?feedView=all": "Better Orange",
+            "https://www.linkedin.com/company/b%C3%BCttner-kolberg-und-partner-verm%C3%B6gensverwalter-gmbh/posts/?feedView=all": "Büttner & Kohlberg",
+            "https://www.linkedin.com/company/crossalliance/posts/?feedView=all": "CROSS ALLIANCE communication GmbH",
+            "https://www.linkedin.com/company/duxebridge-capital/posts/?feedView=all" :"Duxebridge",                                                                                                                                         
+            "https://www.linkedin.com/company/dv-immobilien-management-gmbh/posts/?feedView=all" :  "DV Immobilien Gruppe ",
+            "https://www.linkedin.com/company/eight-advisory/posts/?feedView=all":  "Eight Advisory",
+            "https://www.linkedin.com/company/eqs-group/posts/?feedView=all": "EQS ",
+            "https://www.linkedin.com/company/ernstandyoung/posts/?feedView=all" : "Ernst & Young GmbH ", 
+            "https://www.linkedin.com/company/eschaton-opportunities-fund-management-lp/posts/?feedView=all": "Eschaton Opportunities Fund",
+            "https://www.linkedin.com/company/haib/posts/?feedView=all": "Hauck & Aufhäuser", 
+            "https://www.linkedin.com/company/hotel-kitzhof---mountain-design-resort/posts/?feedView=all": "Hotel Kitzhof", 
+            "https://www.linkedin.com/company/k-hottinger-ag/posts/?feedView=all" : "Hottinger AG", 
+            "https://www.linkedin.com/company/mmwarburg/posts/?feedView=all" : "M.M.Warburg & CO",
+            "https://www.linkedin.com/company/manfred-piontke-portfolio-management/posts/?feedView=all": "MPPM", 
+            "https://www.linkedin.com/company/syz-capital/posts/?feedView=all": "SYZ Capital AG",
+            "https://www.linkedin.com/company/cooper-media-gmbh/posts/?feedView=all": "Cooper Media",
+            "https://www.linkedin.com/company/noerr/posts/?feedView=all": "Noerr Partnerschaftsgesellschaft mbB", 
+            "https://www.linkedin.com/company/ken-capital-advisors/posts/?feedView=all" : "KEN Capital",
+            "https://www.linkedin.com/company/dt&shop-gmbh/posts/?feedView=all" : "DT&SHOP GmbH", 
+            "https://www.linkedin.com/company/pareto-securities-as/posts/?feedView=all": "Pareto Securities",
+            "https://www.linkedin.com/company/jefferies/posts/?feedView=all": "Jefferies",
+            "https://www.linkedin.com/showcase/stifel-europe/posts/?feedView=all": "Stifel Nicolaus Europe Ltd"
+                        
+            }
 
 
 
@@ -179,12 +204,17 @@ def printFunction_search(i, rows, dataframe):
 
 def printFunction_posts(i, rows, dataframe):
     if not pd.isnull(rows['profileUrl']):
-        #st.image(rows['profileImgUrl'], width=150)
+        
         st.subheader(dataframe.company_name[i])
-        #st.write('Personal Account')
-        st.write(rows['type']) #postType
+        st.write('Content Type: ', rows['type']) #postType
         st.write('-----------')
-       
+        if 'imgUrl' in dataframe.columns:
+            # if rows['imgUrl']:
+            #     st.image(rows['imgUrl'], width=230)
+
+            if not pd.isnull(rows['imgUrl']):
+                        st.image(rows['imgUrl'])
+
         st.info(rows['postContent'])  #postrowsontent
         st.write('Total Interactions 📈:  ',rows['Total Interactions']) #totInterarowstions
         st.write('Likes 👍:  ',rows['likeCount']) #totInterarowstions
