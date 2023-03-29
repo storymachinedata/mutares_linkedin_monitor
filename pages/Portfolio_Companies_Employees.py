@@ -37,7 +37,7 @@ with col3:
 
 
 
-mutares_emp_path = 'https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/NJdVFZ8vRW3bmtKN3yQd6Q/mutares_portfolio_companies_employees_post.csv'
+mutares_emp_path =  "https://phantombuster.s3.amazonaws.com/UhrenaxfEnY/NJdVFZ8vRW3bmtKN3yQd6Q/mutares_portfolio_companies_employees_post.csv"
 
 
 mutares_emp_main = read_file(mutares_emp_path)
