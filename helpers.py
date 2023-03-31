@@ -72,13 +72,16 @@ mapper = { 'https://www.linkedin.com/company/amaneos/posts/?feedView=all' : 'Ama
             }
 
 
+discarded_profiles = ["https://www.linkedin.com/in/ACoAAEB3N8IBb5NaWMCtpaOFn5AORKdO8GD0YYQ", 
+                        "https://www.linkedin.com/in/ACoAABZ0TwMBM6L8kK3T3IFBzn2PyI5OWobF_jY",
+                       "https://www.linkedin.com/in/ACoAAAb2M6sBbxLT-2TFhZYnrlGyY0sxT7X9nvI"]
 
-
-@st.cache
 def read_file(filename):
     df =pd.read_csv(filename)
     df = df.dropna(how='any', subset=['textContent'])
     df.drop(['connectionDegree', 'timestamp'], axis=1, inplace=True)
+
+    df = df[~df['profileUrl'].isin(discarded_profiles)]
     df['postDate'] = df.postUrl.apply(getActualDate)
     df = df.dropna(how='any', subset=['postDate'])
     df['date'] =  pd.to_datetime(df['postDate'])
@@ -98,7 +101,7 @@ def read_file(filename):
 
 
 
-@st.cache
+
 def read_file_sp(filename):
     df =pd.read_csv(filename)
     df = df.dropna(how='any', subset=['postContent'])
