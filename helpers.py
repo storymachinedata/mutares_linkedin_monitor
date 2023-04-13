@@ -67,7 +67,10 @@ mapper = { 'https://www.linkedin.com/company/amaneos/posts/?feedView=all' : 'Ama
             "https://www.linkedin.com/company/dt&shop-gmbh/posts/?feedView=all" : "DT&SHOP GmbH", 
             "https://www.linkedin.com/company/pareto-securities-as/posts/?feedView=all": "Pareto Securities",
             "https://www.linkedin.com/company/jefferies/posts/?feedView=all": "Jefferies",
-            "https://www.linkedin.com/showcase/stifel-europe/posts/?feedView=all": "Stifel Nicolaus Europe Ltd"
+            "https://www.linkedin.com/showcase/stifel-europe/posts/?feedView=all": "Stifel Nicolaus Europe Ltd",
+            "https://www.linkedin.com/company/mutares-france/" : "Mutares France",
+            "https://www.linkedin.com/company/mutares-italy-srl/": "Mutares Italy"
+          
                         
             }
 
