@@ -71,7 +71,8 @@ mapper = { 'https://www.linkedin.com/company/amaneos/posts/?feedView=all' : 'Ama
             "https://www.linkedin.com/company/mutares-france/" : "Mutares France",
             "https://www.linkedin.com/company/mutares-italy-srl/": "Mutares Italy",
             "https://www.linkedin.com/company/moldtecs/posts/?feedView=all" : "MoldTecs",
-            "https://www.linkedin.com/company/terranor-ab/posts/?feedView=all" : "Terranor AB"
+            "https://www.linkedin.com/company/terranor-ab/posts/?feedView=all" : "Terranor AB",
+            "https://www.linkedin.com/company/arriva-danmark/posts/?feedView=all" : "Arriva Danmark"
           
                         
             }
